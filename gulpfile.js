@@ -4,8 +4,10 @@ var gulp = require('gulp');
 var pug = require('gulp-pug');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
+var merge = require('merge-stream');
 var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
+var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
 
 var distPath = './dist';
@@ -24,7 +26,8 @@ gulp.task('sass', function () {
   .pipe(sass().on('error', sass.logError))
   .pipe(concat('index.css'))
   .pipe(sourcemaps.write())
-  .pipe(gulp.dest(distPath));
+  .pipe(gulp.dest(distPath))
+  .pipe(livereload());
 });
 
 gulp.task('copy-assets', function () {
@@ -32,12 +35,12 @@ gulp.task('copy-assets', function () {
       .pipe(gulp.dest('./dist/assets'));
 });
 
-gulp.task('sass:watch', function () {
+gulp.task('dev:watch', function () {
+  livereload.listen({
+    reloadPage: 'http://127.0.0.1:8080/index.html'
+  });
   gulp.watch(sassPath, ['sass']);
-});
-
-gulp.task('dev', function(done) {
-  runSequence ( 'clean', 'copy-assets', 'sass', 'pug', 'sass:watch', done);
+  gulp.watch(htmlPath + '/**/*.pug', ['pug']);
 });
 
 gulp.task('pug', function buildHTML() {
@@ -46,8 +49,24 @@ gulp.task('pug', function buildHTML() {
     // Your options in here.
   }))
   .pipe(gulp.dest(distPath))
+  .pipe(livereload());
+});
+
+gulp.task('vendor', function() {
+  var bootstrap = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+    .pipe(gulp.dest(distPath + '/vendor'));
+  var bootstrap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
+    .pipe(gulp.dest(distPath + '/vendor'));
+  var jquery = gulp.src('./node_modules/jquery/dist/jquery.min.js')
+    .pipe(gulp.dest(distPath + '/vendor'));
+
+  return merge(bootstrap, jquery);
+});
+
+gulp.task('dev', function(done) {
+  runSequence ( 'clean', 'copy-assets', 'vendor' , 'sass', 'pug', 'dev:watch', done);
 });
 
 gulp.task('build', function(done) {
-  runSequence ( 'clean', 'copy-assets', 'sass', 'pug', done);
+  runSequence ( 'clean', 'copy-assets', 'vendor', 'sass', 'pug', done);
 });

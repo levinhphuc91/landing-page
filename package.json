@@ -5,12 +5,16 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^3.8.1",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
+    "jquery": "^3.2.1",
+    "merge-stream": "^1.0.1",
     "pug": "^2.0.0-beta.12",
     "run-sequence": "^1.2.2"
   },
