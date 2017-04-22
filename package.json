@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "Design landing page on moneychangersoftware.com",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "connect": "^3.6.1",
+    "serve-static": "^1.12.1"
+  },
   "devDependencies": {
     "bootstrap": "^4.0.0-alpha.6",
+    "browser-sync": "^2.18.8",
+    "express": "^4.15.2",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.1",
@@ -20,6 +25,8 @@
     "tether": "^1.4.0"
   },
   "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently --kill-others \"gulp build && gulp browser-sync\" \"npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "4xlabs",

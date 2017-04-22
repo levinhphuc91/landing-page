@@ -9,12 +9,25 @@ var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
+var browserSync = require('browser-sync').create();
 
 var distPath = './dist';
 var htmlPath = './src/html';
 var fontsPath = './src/fonts';
 var assetsPath = './src/assets';
 var sassPath = './src/sass/**/*.sass';
+
+// Static server
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: "./dist"
+        }
+    });
+    gulp.watch(sassPath, ['sass']);
+    gulp.watch(htmlPath + '/**/*.pug', ['pug']);
+});
+
 
 gulp.task('clean', function () {
     return gulp.src(distPath, {read: false})
@@ -28,7 +41,7 @@ gulp.task('sass', function () {
   .pipe(concat('index.css'))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(distPath))
-  .pipe(livereload());
+  .pipe(browserSync.stream());
 });
 
 gulp.task('copy-assets', function () {
@@ -41,21 +54,13 @@ gulp.task('copy-fonts', function () {
       .pipe(gulp.dest('./dist/fonts'));
 });
 
-gulp.task('dev:watch', function () {
-  livereload.listen({
-    reloadPage: 'http://127.0.0.1:8080/index.html'
-  });
-  gulp.watch(sassPath, ['sass']);
-  gulp.watch(htmlPath + '/**/*.pug', ['pug']);
-});
-
 gulp.task('pug', function buildHTML() {
   return gulp.src(htmlPath + '/index.pug')
   .pipe(pug({
     // Your options in here.
   }))
   .pipe(gulp.dest(distPath))
-  .pipe(livereload());
+  .pipe(browserSync.stream());
 });
 
 gulp.task('vendor', function() {
@@ -71,10 +76,6 @@ gulp.task('vendor', function() {
     .pipe(gulp.dest(distPath + '/vendor'));
 
   return merge(bootstrapJs, bootstrapCss, bootstrapCssmap, jquery, tether);
-});
-
-gulp.task('dev', function(done) {
-  runSequence ( 'clean', 'copy-assets', 'copy-fonts', 'vendor' , 'sass', 'pug', 'dev:watch', done);
 });
 
 gulp.task('build', function(done) {
