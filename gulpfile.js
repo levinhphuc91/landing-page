@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var merge = require('merge-stream');
 var concat = require('gulp-concat');
+var notify = require("gulp-notify");
 var runSequence = require('run-sequence');
 var livereload = require('gulp-livereload');
 var sourcemaps = require('gulp-sourcemaps');
@@ -37,7 +38,9 @@ gulp.task('clean', function () {
 gulp.task('sass', function () {
  return gulp.src(sassPath)
   .pipe(sourcemaps.init())
-  .pipe(sass().on('error', sass.logError))
+  .pipe(sass().on('error', notify.onError(function (error) {
+    return 'An error occurred while compiling sass.\nLook in the console for details.\n' + error;
+  })))
   .pipe(concat('index.css'))
   .pipe(sourcemaps.write())
   .pipe(gulp.dest(distPath))
@@ -60,6 +63,9 @@ gulp.task('pug', function buildHTML() {
   return gulp.src(htmlPath + '/index.pug')
   .pipe(pug({
     // Your options in here.
+  }))
+  .on('error', notify.onError(function (error) {
+    return 'An error occurred while compiling pug.\nLook in the console for details.\n' + error;
   }))
   .pipe(gulp.dest(distPath))
   .pipe(browserSync.stream());
