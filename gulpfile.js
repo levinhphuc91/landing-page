@@ -12,6 +12,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 var distPath = './dist';
 var htmlPath = './src/html';
+var fontsPath = './src/fonts';
 var assetsPath = './src/assets';
 var sassPath = './src/sass/**/*.sass';
 
@@ -35,6 +36,11 @@ gulp.task('copy-assets', function () {
       .pipe(gulp.dest('./dist/assets'));
 });
 
+gulp.task('copy-fonts', function () {
+  gulp.src(fontsPath + '/**/*.{eot,svg,ttf,woff,oft}')
+      .pipe(gulp.dest('./dist/fonts'));
+});
+
 gulp.task('dev:watch', function () {
   livereload.listen({
     reloadPage: 'http://127.0.0.1:8080/index.html'
@@ -53,20 +59,24 @@ gulp.task('pug', function buildHTML() {
 });
 
 gulp.task('vendor', function() {
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+  var bootstrapJs = gulp.src('./node_modules/bootstrap/dist/js/bootstrap.min.js')
     .pipe(gulp.dest(distPath + '/vendor'));
-  var bootstrap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
+  var bootstrapCss = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
+    .pipe(gulp.dest(distPath + '/vendor'));
+  var bootstrapCssmap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css.map')
+    .pipe(gulp.dest(distPath + '/vendor'));
+  var tether = gulp.src('./node_modules/tether/dist/js/tether.min.js')
     .pipe(gulp.dest(distPath + '/vendor'));
   var jquery = gulp.src('./node_modules/jquery/dist/jquery.min.js')
     .pipe(gulp.dest(distPath + '/vendor'));
 
-  return merge(bootstrap, jquery);
+  return merge(bootstrapJs, bootstrapCss, bootstrapCssmap, jquery, tether);
 });
 
 gulp.task('dev', function(done) {
-  runSequence ( 'clean', 'copy-assets', 'vendor' , 'sass', 'pug', 'dev:watch', done);
+  runSequence ( 'clean', 'copy-assets', 'copy-fonts', 'vendor' , 'sass', 'pug', 'dev:watch', done);
 });
 
 gulp.task('build', function(done) {
-  runSequence ( 'clean', 'copy-assets', 'vendor', 'sass', 'pug', done);
+  runSequence ( 'clean', 'copy-assets', 'copy-fonts','vendor', 'sass', 'pug', done);
 });
