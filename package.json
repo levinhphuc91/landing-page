@@ -4,6 +4,7 @@
   "description": "Design landing page on moneychangersoftware.com",
   "main": "index.js",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "connect": "^3.6.1",
     "serve-static": "^1.12.1"
   },

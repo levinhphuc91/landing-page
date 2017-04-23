@@ -1,4 +1,4 @@
-.container-header
+.container-header, .container-header-scroll
   background-color: #f1f1f1
   padding-top: 50px
   .btn-send-email
@@ -7,15 +7,27 @@
     display: inline-block
     color: #1b6197
     font-size: 12px
+    font-family: 'Maven-ProBold'
   .content-header
     overflow: hidden
     padding: 50px 50px 0
     h4
-      font-size: 22px
+      font-size: 28px
       line-height: 1.4
+      padding: 0rem 2rem
     p
-      margin: 35px 0 0
-      padding: 0 30px
+      margin: 1.5rem 0 0
+      padding: 0 10rem
+      font-size: 14px
+
+.container-header-scroll
+  position: fixed
+  top: 0
+  z-index: 10
+  padding: 1rem 0rem
+  width: 100%
+  background-color: rgba(255,255,255,.95)
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1)
 
 .container-map
   padding: 80px 0
@@ -23,6 +35,8 @@
   background-repeat: no-repeat
   background-position: 95% 40px
   min-height: 450px
+  p
+    font-size: 14px
 
 .container-service-one
   background-color: #e5f7f9
@@ -46,6 +60,7 @@
   top: 30%
   left: 0
   text-align: center
+  font-family: 'Poppins-SemiBold'
   a
     -webkit-border-radius: 4px
     -moz-border-radius: 4px
