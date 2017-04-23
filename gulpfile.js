@@ -76,6 +76,8 @@ gulp.task('vendor', function () {
     .pipe(gulp.dest(distPath + '/vendor'))
   var bootstrapCss = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css')
     .pipe(gulp.dest(distPath + '/vendor'))
+  var animatieCss = gulp.src('./node_modules/animate.css/animate.min.css')
+    .pipe(gulp.dest(distPath + '/vendor'))
   var bootstrapCssmap = gulp.src('./node_modules/bootstrap/dist/css/bootstrap.min.css.map')
     .pipe(gulp.dest(distPath + '/vendor'))
   var tether = gulp.src('./node_modules/tether/dist/js/tether.min.js')
@@ -83,7 +85,7 @@ gulp.task('vendor', function () {
   var jquery = gulp.src('./node_modules/jquery/dist/jquery.min.js')
     .pipe(gulp.dest(distPath + '/vendor'))
 
-  return merge(bootstrapJs, bootstrapCss, bootstrapCssmap, jquery, tether)
+  return merge(bootstrapJs, bootstrapCss, bootstrapCssmap, jquery, tether, animatieCss)
 })
 
 gulp.task('js', function () {
