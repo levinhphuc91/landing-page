@@ -5,14 +5,16 @@ $(document).ready(function () {
 })
 
 function scrollAnimation() {
+  var heightOfScreen = $(window).height();
+  $('.container-homepage').css('margin-top', heightOfScreen);
   $(document).scroll(function() {
-    var $headerScroll = $('.container-header-scroll');
+    var $headerScroll = $('#container-header-scroll');
     var scrollHeight = $(document).scrollTop();
-    console.log(scrollHeight);
-    if(scrollHeight > 750) {
-      $headerScroll.removeClass('hidden').addClass('animated fadeInDown');
-    } else if(!$headerScroll.hasClass('hidden')) {
-      $('.container-header-scroll').addClass('hidden').removeClass('animated fadeInDown');
+    console.log(heightOfScreen);
+    if(scrollHeight > heightOfScreen) {
+      $headerScroll.addClass('fixed-container-header scroll-header');
+    } else {
+        $headerScroll.removeClass('fixed-container-header scroll-header');
     }
   });
 }
