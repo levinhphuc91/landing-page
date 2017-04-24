@@ -32,6 +32,96 @@ body
 
   100%
     opacity: 1
+
+@keyframes slideInDown
+  0%
+    -webkit-transform: translateY(-50px) translateZ(0) translateX(0) rotate(0.02deg)
+    transform: translateY(-50px) translateZ(0) translateX(0) rotate(0.02deg)
+    opacity: 0
+
+  75%
+    -webkit-transform: translateY(0) translateZ(0) translateX(0) rotate(0.02deg)
+    transform: translateY(0) translateZ(0) translateX(0) rotate(0.02deg)
+
+  100%
+    opacity: 1
+
+@-webkit-keyframes bounceIn
+  from, 20%, 40%, 60%, 80%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  0%
+    opacity: 0
+    -webkit-transform: scale3d(0.3, 0.3, 0.3)
+    transform: scale3d(0.3, 0.3, 0.3)
+
+  20%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1)
+    transform: scale3d(1.1, 1.1, 1.1)
+
+  40%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9)
+    transform: scale3d(0.9, 0.9, 0.9)
+
+  60%
+    opacity: 1
+    -webkit-transform: scale3d(1.03, 1.03, 1.03)
+    transform: scale3d(1.03, 1.03, 1.03)
+
+  80%
+    -webkit-transform: scale3d(0.97, 0.97, 0.97)
+    transform: scale3d(0.97, 0.97, 0.97)
+
+  to
+    opacity: 1
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+
+@keyframes bounceIn
+  from, 20%, 40%, 60%, 80%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  0%
+    opacity: 0
+    -webkit-transform: scale3d(0.3, 0.3, 0.3)
+    transform: scale3d(0.3, 0.3, 0.3)
+
+  20%
+    -webkit-transform: scale3d(1.1, 1.1, 1.1)
+    transform: scale3d(1.1, 1.1, 1.1)
+
+  40%
+    -webkit-transform: scale3d(0.9, 0.9, 0.9)
+    transform: scale3d(0.9, 0.9, 0.9)
+
+  60%
+    opacity: 1
+    -webkit-transform: scale3d(1.03, 1.03, 1.03)
+    transform: scale3d(1.03, 1.03, 1.03)
+
+  80%
+    -webkit-transform: scale3d(0.97, 0.97, 0.97)
+    transform: scale3d(0.97, 0.97, 0.97)
+
+  to
+    opacity: 1
+    -webkit-transform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
+
+
+.bounceIn
+  -webkit-animation-name: bounceIn
+  animation-name: bounceIn
+
+.animated
+  -webkit-animation-duration: 1s
+  animation-duration: 1s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+
 .container-header
   background-color: #f1f1f1
   position: fixed
@@ -87,6 +177,17 @@ body
   background-repeat: no-repeat
   background-position: 0 30px
   min-height: 630px
+  .content-more-business
+    padding: 15px 0
+    p
+      color: #8d959c
+      margin-bottom: 5px
+      img
+        margin-right: 5px
+  .btn-learn-more-business
+    margin: 15px 0 0
+    text-decoration: underline
+    color: #387ebb
   h4
     padding: 80px 0 30px
 
@@ -171,3 +272,31 @@ body
   padding-top: 100px
   top: 0
   left: 0
+
+.container-modal-sign-up
+  .show
+    -webkit-animation-name: pulse
+    animation-name: pulse
+  .modal-dialog
+    width: 600px
+    max-width: 600px
+  .modal-header
+    border-bottom: none
+    h4
+      margin-top: 15px
+  .modal-body
+    input, select
+      border: 1px solid #e1e4ea
+      margin-bottom: 14px
+    label
+      margin: 10px 0
+    .row
+      margin-left: -6px
+      margin-right: -6px
+    .col-sm-6, .col-sm-12
+      padding-left: 6px
+      padding-right: 6px
+    .btn-sign-up
+      display: block
+      text-align: center
+      width: 100%

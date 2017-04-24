@@ -8,7 +8,7 @@ section.container-top-homepage
                     div.text-center.margin-bottm-reset.relative-pos
                         img.max-width(src='./assets/screenshot-dashboard.png' alt='Image Title')
                         div.btn-sign-up-home
-                            a(href="#").box-shadow Sign up for a free trial today!
+                            a(href="#", data-toggle="modal", data-target="#myModal").box-shadow Sign up for a free trial today!
 section.container-homepage
     section.container-map
         div.container
@@ -42,7 +42,53 @@ section.container-homepage
                 div.col-sm-6
                     h4.main-color-text.text-capitalize Business Management
                     p.sub-color-text Record all customer transactions and foreign currency in stock for ease of accounting with advanced price setting features and automated reporting.
+                    div
+                        a.btn-learn-more-business(data-toggle="collapse", href="#collapseExample", aria-expanded="false", aria-controls="collapseExample") Learn more
+                    div#collapseExample.collapse.content-more-business
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Create and import all stock entries for foreign currencies
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Record Buy, Sell and cost-of-stock prices
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Automate price setting and inverse calculation
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Print receipts
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Manage customer records through an integrated CRM system
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Identify suspicious individuals through an integrated KYC and compliance system
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Segment customer groups eg. watch and black lists
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Receive daily and monthly updates on historical stock reports
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Access sales summary and profit reports
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Generate management reports
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Access daily transaction records
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Export data into multiple file formats
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Manage multiple outlets
+                        p
+                            img(src='./assets/check-icon.png' alt='Image Title')
+                            span Set different permission settings for individual tellers
                     a.btn-sign-up.box-shadow Sign up for a free trial today!
+
 
     section.container-live-rate
         div.container
@@ -207,3 +253,27 @@ section.container-homepage
             div.col-sm-12
                 div.text-center
                     a.btn-sign-up.box-shadow.btn-different-width Submit
+div.container-modal-sign-up
+    div.modal.fade#myModal(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
+        div.modal-dialog.animated.bounceIn(role="document")
+            div.modal-content
+                div.modal-header
+                    h4.text-center Get Started For Free
+                    button.close(data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                div.modal-body
+                    div.row.clearfix
+                        div.col-sm-6
+                            input(type="text", placeholder="Name")
+                        div.col-sm-6
+                            input(type="text", placeholder="Email")
+                        div.col-sm-12
+                            input(type="text", placeholder="Country")
+                        div.col-sm-12
+                            input(type="text", placeholder="Address")
+                        div.col-sm-12
+                            label what feature are you most interested in ?
+                        div.col-sm-12
+                            select
+                                option please select
+                            a.btn-sign-up.box-shadow.btn-different-width Submit

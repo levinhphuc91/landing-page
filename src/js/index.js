@@ -10,11 +10,13 @@ function scrollAnimation() {
   $(document).scroll(function() {
     var $headerScroll = $('#container-header-scroll');
     var scrollHeight = $(document).scrollTop();
-    console.log(heightOfScreen);
+    console.log(scrollHeight);
     if(scrollHeight > heightOfScreen) {
       $headerScroll.addClass('fixed-container-header scroll-header');
     } else {
         $headerScroll.removeClass('fixed-container-header scroll-header');
     }
+    var opacity = 1 - (scrollHeight / (heightOfScreen / 2));
+    $('.content-header').css('opacity', opacity);
   });
 }
