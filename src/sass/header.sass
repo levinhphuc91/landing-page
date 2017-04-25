@@ -160,16 +160,13 @@ body
 
 .container-map
   padding: 80px 0
-  background-image: url("./assets/screen-map.png")
-  background-repeat: no-repeat
-  background-position: 95% 40px
-  min-height: 510px
   p
     font-size: 14px
+    padding: 40px 0 0
 
 .container-service-one
   background-color: #e5f7f9
-  padding: 40px 0
+  padding: 15% 0 0
   .widget-service
     h5
       margin: 15px 0
@@ -246,7 +243,7 @@ body
   min-height: 550px
 
 .container-why-us
-  padding: 35px 0
+  padding: 10% 0 0
   h4
     margin: 0 0 30px
   .widget-service
@@ -254,7 +251,7 @@ body
 
 .container-form-start
   background-color: #3884bf
-  padding: 35px 20%
+  padding: 10% 20% 0
   label
     color: #6fbdf0
   input
@@ -303,3 +300,28 @@ body
       display: block
       text-align: center
       width: 100%
+.hidden-desktop
+  display: none
+
+@media only screen and (max-width: 767px)
+  .hidden-desktop
+    display: block
+  .no-background-mobile
+    background-image: none
+  .full-height-screen
+    height: auto
+  .fixed-container-header
+    padding: 10px 0 !important
+  .container-header
+    .btn-send-email
+      margin-top: 5px
+  .container-businiess-management
+    padding:  0 0 30px
+  .container-businiess-management
+    h4
+      padding: 30px 0
+  .margin-b-20-mobile
+    margin-bottom: 20px
+  .container-footer
+    font-size: 12px
+
