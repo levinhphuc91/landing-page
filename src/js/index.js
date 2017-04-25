@@ -5,7 +5,6 @@ $(document).ready(function () {
 
 function scrollAnimation() {
   var heightOfScreen = $(window).height();
-  $('.container-homepage').css('margin-top', heightOfScreen);
   $(document).scroll(function() {
     var $headerScroll = $('#container-header-scroll');
     var scrollHeight = $(document).scrollTop();
