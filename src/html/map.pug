@@ -125,9 +125,6 @@ section.container-homepage
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span Accessible on desktop and mobile
-                        p
-                            img(src='./assets/check-icon.png' alt='Image Title')
-                            span Accessible on desktop and mobile
                     a.margin-b-20-mobile(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
                 div.col-sm-6
                     img.hidden-desktop(src='./assets/live-rate.png' alt='Image Title' width='100%')
@@ -245,26 +242,28 @@ section.container-homepage
                         h5.text-capitalize.main-color-text High Security
                         p.margin-bottm-reset.text-center.sub-color-text End-to-end encryption and automated data back-up to ensure your data is always safe and secured in Biz4x.
 
-    section.container-form-start.full-height-screen
-        h4.text-capitalize.text-center get started for free
+    section.container-form-start
+        h4.text-capitalize.text-center We just need some information from you before scheduling a demo
         div.row.clearfix
             div.col-sm-6
-                input(type='text', placeholder='Name')
+                input(type="text", placeholder="First Name")
+            div.col-sm-6
+                input(type="text", placeholder="Last Name")
             div.col-sm-6
                 input(type='text', placeholder='Email')
             div.col-sm-6
                 input(type='text', placeholder='Phone')
-            div.col-sm-6
+            div.col-sm-12
                 input(type='text', placeholder='Company')
             div.col-sm-12
-                select#countries
+                select(style="color:gray")#countries
             div.col-sm-12
                 input(type='text', placeholder='Address')
             div.col-sm-12
                 label What feature are you most interested in ?
             div.col-sm-12
-                select
-                    option please select
+                select(style="color:gray")
+                    option Please select
                     option Live FX Rates
                     option Compliance
                     option Customer Acquisition
@@ -280,30 +279,36 @@ section.container-homepage
                   |  Subscribe to Biz4x mailing list.              
             div.col-sm-12
                 div.text-center
-                    a.btn-sign-up.box-shadow.btn-different-width.margin-b-20-mobile Submit
+                    a.btn-sign-up.box-shadow.btn-different-width.margin-b-20-mobile Submit demo request
 div.container-modal-sign-up
     div.modal.fade#myModal(tabindex="-1", role="dialog", aria-labelledby="exampleModalLabel", aria-hidden="true")
         div.modal-dialog.animated.bounceIn(role="document")
             div.modal-content
                 div.modal-header
-                    h4.text-center Get Started For Free
+                    h4.text-center We just need some information from you before scheduling a demo
                     button.close(data-dismiss="modal", aria-label="Close")
                         span(aria-hidden="true") &times;
                 div.modal-body
                     div.row.clearfix
                         div.col-sm-6
-                            input(type="text", placeholder="Name")
+                            input(type="text", placeholder="First Name")
+                        div.col-sm-6
+                            input(type="text", placeholder="Last Name")
                         div.col-sm-6
                             input(type="text", placeholder="Email")
+                        div.col-sm-6
+                            input(type="text", placeholder="Phone")
                         div.col-sm-12
-                            select#countriesModal
+                            input(type="text", placeholder="Company")
+                        div.col-sm-12
+                            select(style="color:gray")#countriesModal
                         div.col-sm-12
                             input(type="text", placeholder="Address")
                         div.col-sm-12
                             label What feature are you most interested in ?
                         div.col-sm-12
-                            select
-                                option please select
+                            select(style="color:gray")
+                                option Please select
                                 option Live FX Rates
                                 option Compliance
                                 option Customer Acquisition
@@ -318,4 +323,4 @@ div.container-modal-sign-up
                               |  Subscribe to Biz4x mailing list.
                         div.col-sm-12
                             div.text-center
-                                a.btn-sign-up.box-shadow.btn-different-width.margin-b-20-mobile Submit
+                                a.btn-sign-up.box-shadow.btn-different-width.margin-b-20-mobile Submit demo request
