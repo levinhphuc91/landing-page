@@ -3,8 +3,9 @@ section.container-top-homepage.full-height-screen
         div.row.clearfix
             div.col-sm-12
                 div.content-header
-                    h4.main-color-text.text-center  Biz4x is the complete solution for all your currency exchange business needs.
-                    p.text-center Conveniently access live FX rates, compliance data, new customers and business management features in a single console. No matter the size of your business, Biz4x can help you take it to the next level.
+                    .block-title
+                      h4.main-color-text.text-center  Biz4x is the complete solution for all your currency exchange business needs.
+                      p.text-center Conveniently access live FX rates, compliance data, new customers and business management features in a single console. No matter the size of your business, Biz4x can help you take it to the next level.
                     div.text-center.margin-bottm-reset.relative-pos
                         img.max-width(src='./assets/screenshot-dashboard.png' alt='Image Title')
                         div.btn-sign-up-home
@@ -14,7 +15,8 @@ section.container-homepage
         div.container
             div.row.clearfix
                 div.col-sm-6
-                    p.sub-color-text Accelerate your business growth with the all-in-one professional SaaS software that is built specifically to meet the modern requirements of money service businesses. Join hundreds of businesses using the leading money changer software today.
+                    h4.main-color-text.text-capitalize Accelerate your business growth 
+                    p.sub-color-text Biz4x is an the all-in-one professional SaaS software that is built specifically to meet the modern requirements of money service businesses. Join hundreds of businesses using the leading money changer software today.
                 div.col-sm-6
                     img.max-width(src='./assets/screen-map.png' alt='Image Title' width='100%')
 
@@ -33,7 +35,7 @@ section.container-homepage
                         p.margin-bottom-reset.text-center.sub-color-text A subscription to Biz4x is a gateway to the latest in technological advancement in the physical FX industry. Receive free updates and access new features bi-weekly.
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-business-insight
+                        i.icon.icon-future
                         h5.text-capitalize.main-color-text Gain Business Insights
                         p.margin-bottom-reset.text-center.sub-color-text Easily access all your business-critical data with a single log-in, be it on desktop or mobile. Stay on top of developments with your business at all times of the day.
 
@@ -47,7 +49,7 @@ section.container-homepage
                     p.sub-color-text Record all customer transactions and foreign currency in stock for ease of accounting with advanced price setting features and automated reporting.
                     div
                         a.btn-learn-more-business(data-toggle="collapse", href="#collapseExample", aria-expanded="false", aria-controls="collapseExample") Learn more
-                    div#collapseExample.collapse.content-more-business
+                    div#collapseExample.collapse.collapse-padding
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span Create and import all stock entries for foreign currencies
@@ -100,6 +102,8 @@ section.container-homepage
                     h4.text-capitalize.main-color-text Live FX Rates
                     p.sub-color-text Track real-time FX rates for all global currency pairs.
                     div.widget-condition
+                      a.btn-learn-more-business(data-toggle="collapse", href="#collapseLiveRate", aria-expanded="false", aria-controls="collapseExample") Learn more
+                      #collapseLiveRate.collapse.collapse-padding
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span View more than 100 global currency pairs
@@ -124,7 +128,7 @@ section.container-homepage
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span Accessible on desktop and mobile
-                        a.margin-b-20-mobile(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
+                    a.margin-b-20-mobile(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
                 div.col-sm-6
                     img.hidden-desktop(src='./assets/live-rate.png' alt='Image Title' width='100%')
 
@@ -138,6 +142,8 @@ section.container-homepage
                     h4.text-capitalize.main-color-text Compliance Risk Management
                     p.sub-color-text Conduct customer due dilligence with a compliance risk management database.
                     div.widget-condition
+                      a.btn-learn-more-business(data-toggle="collapse", href="#collapseRiskManagement", aria-expanded="false", aria-controls="collapseExample") Learn more
+                      #collapseRiskManagement.collapse.collapse-padding
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span More than 3 million results from 100,000 different sources
@@ -168,7 +174,7 @@ section.container-homepage
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span API available
-                        a.margin-b-20-mobile(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
+                    a.margin-b-20-mobile(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
 
     section.container-customer-acquisition.full-height-screen.no-background-mobile
         div.container
@@ -177,6 +183,8 @@ section.container-homepage
                     h4.text-capitalize.main-color-text Customer Acquisition
                     p.sub-color-text Reach new customers anywhere in the world.
                     div.widget-condition
+                      a.btn-learn-more-business(data-toggle="collapse", href="#collapseCustomerAcquisition", aria-expanded="false", aria-controls="collapseExample") Learn more
+                      #collapseCustomerAcquisition.collapse.collapse-padding
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span Set and display buy and sell rates online
@@ -198,42 +206,42 @@ section.container-homepage
                         p
                             img(src='./assets/check-icon.png' alt='Image Title')
                             span Online business webpage
-                        a(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
+                    a(href="#", data-toggle="modal", data-target="#myModal").btn-sign-up.box-shadow Sign up for a free trial today!
                 div.col-sm-6
                     img.hidden-desktop(src='./assets/customer-acquisition.png' alt='Image Title' width='100%')
 
     section.container-why-us.full-height-screen
-        h4.text-center.text-capitalize.main-color-text Why Us?
+        h4.text-center.text-capitalize.main-color-text Why Biz4x is The Right Choice For Your Business
         div.container
             div.row.clearfix
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-business-insight
+                        i.icon.icon-custom
                         h5.text-capitalize.main-color-text Future Proof
                         p.margin-bottm-reset.text-center.sub-color-text Weather changes in technology and regulatory landscapes with a platform that is in built in consultation with relevant experts.
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-custom
+                        i.icon.icon-value
                         h5.text-capitalize.main-color-text Custom-Built
                         p.margin-bottm-reset.text-center.sub-color-text A platform that is constantly upgraded with customer feedback and built to address the specific challenges of money changers.
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-value
+                        i.icon.icon-customer
                         h5.text-capitalize.main-color-text Value-Add
                         p.margin-bottm-reset.text-center.sub-color-text A reasonably priced all-in-one solution so money changers can modernize business operations without breaking the bank.
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-customer
+                        i.icon.icon-global
                         h5.text-capitalize.main-color-text Customer Support
                         p.margin-bottm-reset.text-center.sub-color-text Friendly customer support representatives are always ready to help, be it phone, chat, email or face-to-face meetings.
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-global
+                        i.icon.icon-high
                         h5.text-capitalize.main-color-text Global Network
                         p.margin-bottm-reset.text-center.sub-color-text Rapid implementation of customer feedback so the Biz4x solution is custom-built and constantly evolving to meet the individual future business needs of money changers everywhere in the world.
                 div.col-sm-4
                     div.widget-service.text-center
-                        i.icon.icon-high
+                        i.icon.icon-high-security
                         h5.text-capitalize.main-color-text High Security
                         p.margin-bottm-reset.text-center.sub-color-text End-to-end encryption and automated data back-up to ensure your data is always safe and secured in Biz4x.
 
@@ -249,13 +257,11 @@ section.container-homepage
             div.col-sm-6
                 input(type='text', placeholder='Company')
             div.col-sm-12
-                select(style='margin-bottom: 12px')
-                    option Lao
-                    option Campodia
+                select#countries(style='margin-bottom: 12px')
             div.col-sm-12
                 input(type='text', placeholder='Address')
             div.col-sm-12
-                label what feature are you most interested in ?
+                label What feature are you most interested in ?
             div.col-sm-12
                 select
                     option please select
@@ -264,7 +270,14 @@ section.container-homepage
                     option Customer Acquisition
                     option Business Management
                 div.checkbox.col
-
+            .form-biz4x
+              .col.form-check
+                label.form-check-label.row.align-items-center.no-gutters
+                  input.form-check-input(type='checkbox', value='')
+                  |  I agree to Biz4x customer terms of service.
+                label.form-check-label.row.align-items-center.no-gutters
+                  input.form-check-input(type='checkbox', value='')
+                  |  Subscribe to Biz4x mailing list.              
             div.col-sm-12
                 div.text-center
                     a.btn-sign-up.box-shadow.btn-different-width.margin-b-20-mobile Submit
@@ -283,13 +296,11 @@ div.container-modal-sign-up
                         div.col-sm-6
                             input(type="text", placeholder="Email")
                         div.col-sm-12
-                            select
-                                option Lao
-                                option Campodia
+                            select#countriesModal
                         div.col-sm-12
                             input(type="text", placeholder="Address")
                         div.col-sm-12
-                            label what feature are you most interested in ?
+                            label What feature are you most interested in ?
                         div.col-sm-12
                             select
                                 option please select
@@ -297,4 +308,14 @@ div.container-modal-sign-up
                                 option Compliance
                                 option Customer Acquisition
                                 option Business Management
-                            a.btn-sign-up.box-shadow.btn-different-width Submit
+                        .form-biz4x
+                          .col.form-check
+                            label.form-check-label.row.align-items-center.no-gutters
+                              input.form-check-input(type='checkbox', value='')
+                              |  I agree to Biz4x customer terms of service.
+                            label.form-check-label.row.align-items-center.no-gutters
+                              input.form-check-input(type='checkbox', value='')
+                              |  Subscribe to Biz4x mailing list.
+                        div.col-sm-12
+                            div.text-center
+                                a.btn-sign-up.box-shadow.btn-different-width.margin-b-20-mobile Submit
