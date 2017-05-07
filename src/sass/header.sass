@@ -170,7 +170,20 @@ body
   .widget-service
     h5
       margin: 15px 0
-
+.description-landing
+  position: relative
+  padding-left: 18px
+  margin-bottom: 3px !important
+  line-height: 1.8
+  &:before
+    position: absolute
+    width: 12px
+    height: 9px
+    background-image: url(../assets/check-icon.png)
+    content: ''
+    top: 4px
+    left: 0
+    z-index: 1
 .container-businiess-management
   padding: 100px 0
   background-image: url("./assets/business-management.png")
@@ -221,7 +234,6 @@ body
   background-image: url("./assets/live-rate.png")
   background-repeat: no-repeat
   background-position: right 120px
-  min-height: 475px
   h4
     margin: 50px 0 20px
 
